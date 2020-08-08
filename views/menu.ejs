@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendelés</title>
+    <link rel="stylesheet" href="/style/menu.css">
+
+</head>
+
+<body>
+    <h1>Étlap</h1>
+    <div class="container">
+        <table>
+            <tr>
+                <th colspan="2" class="row-heading">Alaptészták</th>
+            </tr>
+            <tr>
+                <td>Név</td>
+                <td>Ár</td>
+            </tr>
+            <% bottoms.forEach(bottom => { %>
+            <tr>
+                <td><%=bottom.name%></td>
+                <td><%=bottom.price%></td>
+            </tr>
+            <% }) %>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2" class="row-heading">Töltelékek</th>
+            </tr>
+            <tr>
+                <td>Név</td>
+                <td>Ár</td>
+            </tr>
+
+            <% fillings.forEach(filling => { %>
+            <tr>
+                <td><%=filling.name%></td>
+                <td><%=filling.price%></td>
+            </tr>
+            <% }) %>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2" class="row-heading">Öntetek</th>
+            </tr>
+            <tr>
+                <td>Név</td>
+                <td>Ár</td>
+            </tr>
+            <% toppings.forEach(topping => { %>
+            <tr>
+                <td><%=topping.name%></td>
+                <td><%=topping.price%></td>
+                <% }) %>
+            </tr>
+        </table>
+    </div>
+    <button><a href="/">Vissza a főoldalra</a></button>
+
+</body>
+
+</html>

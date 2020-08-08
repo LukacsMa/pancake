@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Menu</title>
+    <link rel="stylesheet" href="/style/addMenu.css">
+</head>
+
+<body>
+
+        <table>
+            <tr>
+                <th>Név</th>
+                <th>Ár</th>
+                <th colspan="2">Szerkesztés</th>
+            </tr>
+            <tr>
+                <td colspan="4" class="row-heading">Alaptészták</td>
+            </tr>
+
+            <% bottoms.forEach(bottom => { %>
+            <tr>
+                <form action="/delBottom" method="POST">
+                    <input type="hidden" name="bottomId" value="<%=bottom.id%>" />
+                    <td><input name="bottomName" value="<%=bottom.name%>" /></td>
+                    <td><input name="bottomPrice" value="<%=bottom.price%>" /></td>
+                    <td><button type="submit">törlés</button></td>
+                    <td><button type="submit" formaction="/editBottom">módosítás</button></td>
+                </form>
+            </tr>
+            <% }) %>
+            <tr>
+                <form action="/addBottom" method="POST">
+                    <td><input name="bottomName" type="text" required></td>
+                    <td><input name="bottomPrice" type="number" required></td>
+                    <td colspan="2"><button>Hozzáad</button></td>
+                </form>
+            </tr>
+
+            <tr>
+                <td colspan="4" class="row-heading">Töltelékek</td>
+            </tr>
+
+            <% fillings.forEach(filling => { %>
+            <tr>
+                <form action="/delFilling" method="POST">
+                    <input type="hidden" name="fillingId" value="<%=filling.id%>" />
+                    <td><input name="fillingName" value="<%=filling.name%>" /></td>
+                    <td><input name="fillingPrice" value="<%=filling.price%>" /></td>
+                    <td><button type="submit">törlés</button></td>
+                    <td><button type="submit" formaction="/editFilling">módosítás</button></td>
+                </form>
+            </tr>
+            <% }) %>
+            <tr>
+                <form action="/addFilling" method="POST">
+                    <td><input name="fillingName" type="text" required></td>
+                    <td><input name="fillingPrice" type="number" required></td>
+                    <td colspan="2"><button>Hozzáad</button></td>
+                </form>
+            </tr>
+
+            <tr>
+                <td colspan="4" class="row-heading">Öntetek</td>
+            </tr>
+
+            <% toppings.forEach(topping => { %>
+            <tr>
+                <form action="/delTopping" method="POST">
+                    <input type="hidden" name="toppingId" value="<%=topping.id%>" />
+                    <td><input name="toppingName" value="<%=topping.name%>" /></td>
+                    <td><input name="toppingPrice" value="<%=topping.price%>" /></td>
+                    <td><button type="submit">törlés</button></td>
+                    <td><button type="submit" formaction="/editTopping">módosítás</button></td>
+                </form>
+            </tr>
+            <% }) %>
+
+            <tr>
+                <form action="/addTopping" method="POST">
+                    <td><input name="toppingName" type="text" required></td>
+                    <td><input name="toppingPrice" type="number" required></td>
+                    <td colspan="2"><button>Hozzáad</button></td>
+                </form>
+            </tr>
+        </table>
+
+</body>
+
+</html>

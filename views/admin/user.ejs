@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>users</title>
+    <link rel="stylesheet" href="/style/users.css">
+
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Név</th>
+            <th>E-mail</th>
+            <th>Település</th>
+            <th>Utca</th>
+            <th>Házszám</th>
+            <th>Jelszó</th>
+            <th>Rendelés</th>
+            <th></th>
+        </tr>
+    <%users.forEach(user => { %>
+        <tr>
+            <td><%=user.name%></td>
+            <td><%=user.email%></td>
+            <td><%=user.city%></td>
+            <td><%=user.street%></td>
+            <td><%=user.houseNumber%></td>
+            <td><%=user.password%></td>
+            <td><%=user.order%></td>
+            <form action="/delOrder" method="POST"><td><input type="hidden" name="userId" value="<%=user.id%>" /><button type="submit">Teljesítve</button></td></form>
+        </tr>
+        <% }) %>
+    </table>
+</body>
+</html>

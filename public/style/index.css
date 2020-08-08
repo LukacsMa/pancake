@@ -1,0 +1,51 @@
+body {
+    background-color: rgba(80,80,100,0.8);
+    background-image: url("../assets/pancakes.png");
+    background-size: contain;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(69, 216, 69);
+    background-color: rgba(80,80,100,0.8);
+    padding: 0.5rem;
+}
+
+a:hover {
+    color:rgb(200, 218, 11);
+}
+
+.link {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+}
+
+footer {
+    color: rgb(69, 216, 69);
+    background-color: rgba(80,80,100,0.8);
+    font-size: small;
+    justify-self:end;
+    margin: auto;
+    padding: 0.5rem;
+}
+
+h1{
+    color: rgb(69, 216, 69);
+    background-color: rgba(80,80,100,0.8);
+    font-size: 3rem;
+    padding: 1rem;
+    justify-self: center;
+}
+
+.main-container {
+    display: grid;
+    align-items: center;
+    margin: auto;
+    width: 80vw;
+    height: 90vh;
+
+}

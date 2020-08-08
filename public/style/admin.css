@@ -1,0 +1,33 @@
+input, label {
+    display: block;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+
+body {
+    color: rgb(69, 216, 69);
+    background-color: rgba(80,80,100,0.8);
+    
+}
+
+button {
+    color: rgb(69, 216, 69);
+    background-color: rgba(80,80,100,0.8);
+    padding: 0.5rem;
+}
+
+button:hover {
+    color:rgb(200, 218, 11);
+}
+
+
+a {
+    text-decoration: none;
+    color: rgb(69, 216, 69);
+    background-color: rgba(80,80,100,0.8);
+    padding: 0.5rem;
+}
+
+a:hover {
+    color:rgb(200, 218, 11);
+}

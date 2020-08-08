@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bejelentkezés</title>
+    <link rel="stylesheet" href="/style/regist.css">
+    <script src="/js/regist.js" async></script>
+</head>
+
+<body>
+   <form action="/regist" method="POST">
+        <label>Név</label><input class="input-cell" type="text" id="name" name="yourName" required>
+        <label>Település</label><input class="input-cell" type="text" id="city" name="city" required>
+        <label>Utca</label><input class="input-cell" type="text" id="street" name="street" required>
+        <label>Házszám</label><input class="input-cell" type="number" id="number" name="houseNumber" required>
+        <label>E-mail</label><input class="input-cell" type="email" id="email" name="email" required>
+        <label>Jelszó</label><input class="input-cell" type="password" id="password" name="password" required>
+        <button id="submitButton" type="submit">Elküldés</button>
+    </form>
+</body>
+
+</html>

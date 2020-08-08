@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rendelés</title>
+  <link rel="stylesheet" href="/style/order.css">
+  <script type="module" src="/js/order.js" async></script>
+</head>
+
+<body>
+  <h1>Üdvözlünk <span id="userName"><%=userName%></span> !<h1>
+      <h2>Rendelés</h2>
+      <div class="container">
+        <div>
+          <table>
+            <tr>
+              <th>Név</th>
+              <th>Ár</th>
+              <th></th>
+            </tr>
+            <tr>
+              <td colspan="3" class="row-heading">Alaptészták</td>
+            </tr>
+            <form action="/userOrders" method="POST"></form>
+            <% bottoms.forEach(bottom => { %>
+            <tr>
+              <label for="<%=bottom.id%>">
+                <td><%=bottom.name%></td>
+                <td><%=bottom.price%></td>
+              </label>
+              <td><input type="radio" name="bottomId" value="<%=bottom.id%>" class="ordered-item" /></td>
+            </tr>
+            <% }) %>
+
+            <tr>
+              <td colspan="3" class="row-heading">Töltelékek</td>
+            </tr>
+
+            <% fillings.forEach(filling => { %>
+            <tr>
+              <label for="<%=filling.id%>">
+                <td><%=filling.name%></td>
+                <td><%=filling.price%></td>
+              </label>
+              <td><input type="radio" name="fillingId" value="<%=filling.id%>" class="ordered-item" /></td>
+            </tr>
+            <% }) %>
+
+            <tr>
+              <td colspan="3" class="row-heading">Öntetek</td>
+            </tr>
+
+            <% toppings.forEach(topping => { %>
+            <tr>
+              <label for="<%=topping.id%>">
+                <td><%=topping.name%></td>
+                <td><%=topping.price%></td>
+              </label>
+              <td><input type="radio" name="toppingId" value="<%=topping.id%>" class="ordered-item" /></td>
+            </tr>
+            <% }) %>
+            </form>
+          </table>
+          <button id="basket">Kosárba</button>
+        </div>
+
+        <div>
+
+          <table id="orderTable">
+            <tr>
+              <th colspan="3" id="inBasketList">Kosár tartalma: </th>
+            </tr>
+            <tr>
+              <td>Fizetendő: </td>
+              <td colspan="2" id="finalSum" name="finalSum"></td>
+            </tr>
+            <form action="/postOrder" method="POST" id="form">
+              <input type="hidden" name="userId" value="<%=userId%>">
+              <button type="submit" id="submit">Rendelés elküldése</button>
+            </form>
+          </table>
+        </div>
+      </div>
+
+      <button><a href="/">Vissza a főoldalra</a></button>
+
+</body>
+
+</html>
