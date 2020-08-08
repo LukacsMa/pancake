@@ -1,6 +1,6 @@
 # pancake
 
-##BUILT WITH
+## BUILT WITH
 - HTML
 - CSS
 - JavaScript
@@ -8,4 +8,4 @@
 - Express
 - Mongoe
 
-###A fake pancake house, with database and admin layer
+### A fake pancake house, with database and admin layer
